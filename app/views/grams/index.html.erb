@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<head>
+<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+<title> Barry's World </title>
+<style>
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+header, html {
+  margin: 0;
+  padding: 0;
+  background: url("http://www.dinocreta.com/wp-content/uploads/2013/11/3D-Dinosaurs-Wallpaper-HD.jpg");
+  background-size: cover;
+  text-align: center;
+
+
+}
+ul {
+  background: red;
+}
+li {
+  font-family: cursive helvetica;
+  font-weight: bold;
+display: inline;
+padding: 0 20px 0 20px;
+color: white;
+}
+
+img {
+border-radius: 20px;
+border: 0.5px solid teal;
+margin-top: 20px;
+
+}
+h1 {
+  font-family: helvetica, sans-serif;
+  text-align: center;
+  color: yellow;
+  text-shadow:  5px 3px brown;
+  background: rgba(5,5,5,0.3);
+}
+input {
+  width: 100px;
+}
+
+body {
+  background: green;
+  background-size: cover
+  margin: 0;
+}
+h2 {
+  background: rgba(250,250,250,0.6);
+  height: 30px;
+  font-family: 'Oswald', sans-serif;
+}
+p {
+
+}
+
+small {
+opacity: 0;
+
+}
+</style>
+
+</head>
+
+
+<body>
+
+<header>
+<a href="https://www.facebook.com/barryeatberry">
+<img src="https://scontent-sin1-1.xx.fbcdn.net/hphotos-xlp1/v/t1.0-9/10155896_10151992304975919_2723038371188331151_n.jpg?oh=84db32fd0ee8b2fb6092089c999bafa5&oe=5790A5A4" height = 300px>
+</a>
+<h1>Hello there! Welcome to Barry's World!</h1>
+
+<ul>
+<li><img src="http://vignette4.wikia.nocookie.net/agario/images/0/0a/Agario_raptor.png/revision/latest?cb=20151224035006" height =40px><a href="/grams/new">Submit a Dinosaur Trainer Application!</a></li>
+</ul>
+</header>
+
+<% @grams.each do |gram| %>
+<div>
+  <div>
+      <%= link_to(gram.title, gram) %>
+    </div>
+    </br>
+
+    <div>
+      <%= gram.description %>
+    </div>
+    </br>
+    <div>
+      <%= gram.location_code %>
+    </div>
+    </br>
+<div>
+  <%= link_to('Delete', gram, method: :delete) %>
+</div>
+
+
+</div>
+  <hr>
+<% end %>
+
+<!--
+<article>
+  <h2>The life and times of a dinosaur trainer...</h2>
+  <p>A dinosaur trainer's life knows no boundaries. You have to be on your toes all the time, one misstep, and you'll be eaten!
+  </br>
+  <small>The scariest part is not being eaten, but being maimed!
+  </br> omgomgogmogmogmogmogmgo
+  </br> omgomgogmogmogmogmogmgo
+  </br> omgomgogmogmogmogmogmgo
+  </br> omgomgogmogmogmogmogmgo
+  </small></p>
+</br>
+  <h2>Dating a Dinosaur Trainer...</h2>
+  <p>Dating a Dinosaur Trainer requires patience! Something a Dinosaur Trainer already knows!
+  </br>
+  <small> omgomgogmogmogmogmogmgo
+  </br> omgomgogmogmogmogmogmgo
+  </br> omgomgogmogmogmogmogmgo
+  </br> omgomgogmogmogmogmogmgo
+  </br> omgomgogmogmogmogmogmgo
+  </br> omgomgogmogmogmogmogmgo
+  </small>
+  </p>
+
+
+</article>
+ -->
+</br></br></br>
+
+<p class=about_me> </p>
+
+
+</br></br></br>
+<input type="email" placeholder="Let me know how to contact you!" >
+</br></br></br>
+
+</br></br></br>
+
+
+<script type="text/javascript">
+
+</script>
+
+
+</body>

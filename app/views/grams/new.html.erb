@@ -1,0 +1,31 @@
+<%= form_for @gram do |f| %>
+
+
+<% if @gram.errors %>
+<div>
+  <%= @gram.errors.full_messages %>
+</div>
+<% end %>
+
+
+<div>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+</div>
+
+<div>
+  <%= f.label :description %>
+  <%= f.text_field :description%>
+</div>
+
+<div>
+  <%= f.label :location_code %>
+  <%= f.text_field :location_code %>
+</div>
+
+<div>
+  <%= f.submit %>
+</div>
+
+
+<% end %>
