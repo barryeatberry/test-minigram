@@ -1,0 +1,38 @@
+<head>
+  <style type="text/css">
+
+p {
+color: green;
+font-weight: bold;
+left: 230px;
+position: relative;
+}
+
+
+
+  </style>
+</head>
+
+<body>
+<h1>User Profiles!</h1>
+</br>
+</br>
+
+  <% @users.each do |user| %>
+<div>
+    <div>
+      <%= link_to(user.name, user) %>
+    </div>
+    </br>
+    <div>
+      <%= user.email %>
+    </div>
+    </br>
+  <%= link_to('Delete', user, method: :delete) %>
+</div>
+  <hr>
+<% end %>
+<p><a href="/users/new"></br></br>Submit a Dinosaur Trainer Application!</a></br></br><img src="https://i.imgflip.com/12p0b4.jpg" height =400px></p>
+
+</div>
+</body>
