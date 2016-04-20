@@ -1,7 +1,7 @@
 <%= form_for @user do |f| %>
 
 
-<% if @user.errors %>
+<% if @user.errors.present? %>
 <div>
   <%= @user.errors.full_messages %>
 </div>
