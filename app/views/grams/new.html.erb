@@ -19,7 +19,7 @@
 
 <div>
   <%= f.label :location_code %>
-  <%= f.text_field :location_code %>
+  <%= f.country_select :location_code, include_blank: true, priority_countries: ["SG","MY"] %>
 </div>
 
 <div>
