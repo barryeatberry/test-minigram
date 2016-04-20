@@ -85,6 +85,11 @@ opacity: 0;
 <% @grams.each do |gram| %>
 <div>
   <div>
+    <%= image_tag gram.image_url %>
+    </div>
+    </br>
+
+  <div>
       <%= link_to(gram.title, gram) %>
     </div>
     </br>
@@ -93,6 +98,7 @@ opacity: 0;
       <%= gram.description %>
     </div>
     </br>
+
     <div>
       <%= country_name(gram.location_code) %>
     </div>

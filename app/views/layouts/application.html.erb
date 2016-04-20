@@ -5,6 +5,14 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <script>
+      UPLOADCARE_LOCALE = "en";
+      UPLOADCARE_TABS = "file url facebook gdrive dropbox instagram evernote flickr skydrive";
+      UPLOADCARE_PUBLIC_KEY = "447934b9a794a5d6f1c8";
+  </script>
+  <script charset="utf-8" src="//ucarecdn.com/widget/2.8.2/uploadcare/uploadcare.full.min.js"></script>
+
 </head>
 <body>
 <h1>Minigram</h1>

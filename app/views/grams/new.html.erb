@@ -8,6 +8,10 @@
 <%= form_for @gram do |f| %>
 
 <div>
+  <%= f.hidden_field :image_url, role: 'uploadcare-uploader', data: {crop: "600:600 ", 'images-only' => true} %>
+</div>
+
+<div>
   <%= f.label :title %>
   <%= f.text_field :title %>
 </div>

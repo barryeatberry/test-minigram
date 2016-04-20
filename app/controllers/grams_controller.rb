@@ -1,6 +1,6 @@
 class GramsController < ApplicationController
   def index
-    @grams = Gram.page(params[:page]).per(5)
+    @grams = Gram.order(created_at: :desc).page(params[:page]).per(5)
   end
 
   def new
@@ -33,7 +33,7 @@ class GramsController < ApplicationController
   private
 
   def model_params
-    params.require(:gram).permit(:title, :description, :location_code)
+    params.require(:gram).permit(:title, :description, :location_code, :image_url)
     #"gram"=>{"title"=>"xxx", "description"=>"xxx", "location_code"=>"xxx"}
   end
 
