@@ -4,13 +4,16 @@ class GramsController < ApplicationController
   end
 
   def new
+    redirect_to root_path unless current_user
     @gram = Gram.new
   end
 
   def create
     @gram = Gram.new(model_params)
+    @gram.user = current_user
 
     if @gram.save
+          redirect_to root_path unless current_user
       flash[:notice] = 'Gram Successfully Created!'
         redirect_to @gram
     else
@@ -24,6 +27,7 @@ class GramsController < ApplicationController
   end
 
   def destroy
+      redirect_to root_path unless current_user
     @gram = Gram.find(params[:id])
     @gram.destroy
 

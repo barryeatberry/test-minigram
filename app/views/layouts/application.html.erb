@@ -32,7 +32,18 @@
     </div>
     <div id="navbar" class="collapse navbar-collapse pull-right">
       <ul class="nav navbar-nav">
-        <!--<li><a href="#">About</a></li>-->
+        <!-- <li><a href="#">About</a></li> -->
+
+        <% if current_user %>
+          <li><%= link_to "My Minigram", user_path(current_user) %></li>
+          <li><%= link_to "Log Out", logout_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "Sign Up", new_user_path %></li>
+          <li><%= link_to "Login", login_path %></li>
+        <% end %>
+
+
+
       </ul>
     </div>
   </div>
@@ -41,6 +52,10 @@
 <div class="container">
   <% if flash[:notice] %>
     <div class="alert alert-info"><%= flash[:notice] %></div>
+  <% end %>
+
+  <% if flash[:error] %>
+    <div class="alert alert-info"><%= flash[:error] %></div>
   <% end %>
 
   <%= yield %>

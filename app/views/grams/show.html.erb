@@ -9,8 +9,9 @@
           <div class='col-sm-6 text-right'>
             <span class='created_at'><%= link_to time_ago_in_words(@gram.created_at), gram_path(@gram) %></span>
             &nbsp;
-            <%= link_to icon('trash-o'), gram_path(@gram), method: :delete, data: { confirm: 'Are you sure you want to delete this Gram?'} %>
-          </div>
+            <% if current_user %>
+              <%= link_to icon('trash-o'), gram_path(gram), method: :delete, data: { confirm: 'Are you sure you want to delete this Gram?'} %>
+            <% end %>
         </div>
       </div>
       <div class='panel-body'>
