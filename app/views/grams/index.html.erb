@@ -1,5 +1,42 @@
-<!DOCTYPE html>
-<head>
+<div class='new-gram text-center'>
+    <%= link_to icon('camera'), new_gram_path %>
+</div>
+
+<% @grams.each do |gram| %>
+  <div class='row'>
+    <div class='col-sm-6 col-sm-offset-3'>
+      <div class='panel panel-default'>
+        <div class='panel-heading'>
+          <div class='row'>
+            <div class='col-sm-6'>
+              Me
+            </div>
+            <div class='col-sm-6 text-right'>
+              <span class='created_at'><%= link_to time_ago_in_words(gram.created_at), gram_path(gram) %></span>
+              &nbsp;
+              <%= link_to icon('trash-o'), gram_path(gram), method: :delete, data: { confirm: 'Are you sure you want to delete this Gram?'} %>
+            </div>
+          </div>
+        </div>
+        <div class='panel-body'>
+          <div><%= image_tag gram.image_url %></div>
+        </div>
+        <div class='panel-footer'>
+          <div class='gram-title'><%= gram.title %></div>
+          <div class='gram-location'><%= icon('map-marker') %> <%= country_name(gram.location_code) %></div>
+          <div class='gram-content'><%= gram.description %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<div class='text-center'>
+  <%= paginate @grams %>
+</div>
+
+<!-- <!DOCTYPE html>
+ <head>
 <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 <title> Barry's World </title>
 <style>
@@ -118,7 +155,7 @@ opacity: 0;
 
 
 
-<!--
+
 <article>
   <h2>The life and times of a dinosaur trainer...</h2>
   <p>A dinosaur trainer's life knows no boundaries. You have to be on your toes all the time, one misstep, and you'll be eaten!
@@ -144,7 +181,7 @@ opacity: 0;
 
 
 </article>
- -->
+
 </br></br></br>
 
 <p class=about_me> </p>
@@ -163,3 +200,5 @@ opacity: 0;
 
 
 </body>
+
+ -->
